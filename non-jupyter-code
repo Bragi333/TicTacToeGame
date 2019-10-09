@@ -1,0 +1,142 @@
+import random
+
+welcome_message = 'Welcome to Tic Tac Toe. Player is X, computer is O. This is a new game. Board numbers are as follows:'
+sample_board = ' 1 | 2 | 3 \n 4 | 5 | 6 \n 7 | 8 | 9'
+b = '   |   |   \n   |   |   \n   |   |  '
+
+def user_input(user_choice):
+    global b
+    if user_choice == '1':
+        if b[1] == " ":
+            b = b[:1] + "X" + b[2:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '2':
+        if b[5] == " ":
+            b = b[:5] + "X" + b[6:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '3':
+        if b[9] == " ":
+            b = b[:9] + "X" + b[10:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '4':
+        if b[12] == " ":
+            b = b[:12] + "X" + b[13:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '5':
+        if b[16] == " ":
+            b = b[:16] + "X" + b[17:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '6':
+        if b[20] == " ":
+            b = b[:20] + "X" + b[21:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '7':
+        if b[24] == " ":
+            b = b[:24] + "X" + b[25:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '8':
+        if b[28] == " ":
+            b = b[:28] + "X" + b[29:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+    elif user_choice == '9':
+        if b[31] == " ":
+            b = b[:31] + "X" + b[32:len(b)]
+            return b
+        else:
+            print('That spot already has a letter in it. Please choose another [1-9]')
+            
+def random_number():
+    return random.randint(1,9)
+    
+def cpu_input(random_number):
+    global b
+    if random_number == '1':
+        if b[1] == " ":
+            b = b[:1] + "O" + b[2:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '2':
+        if b[5] == " ":
+            b = b[:5] + "O" + b[6:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '3':
+        if b[9] == " ":
+            b = b[:9] + "O" + b[10:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '4':
+        if b[12] == " ":
+            b = b[:12] + "O" + b[13:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '5':
+        if b[16] == " ":
+            b = b[:16] + "O" + b[17:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '6':
+        if b[20] == " ":
+            b = b[:20] + "O" + b[21:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '7':
+        if b[24] == " ":
+            b = b[:24] + "O" + b[25:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '8':
+        if b[28] == " ":
+            b = b[:28] + "O" + b[29:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+    elif random_number == '9':
+        if b[31] == " ":
+            b = b[:31] + "O" + b[32:len(b)]
+            return b
+        else:
+            random_number()
+            return cpu_choice(random_number)
+            
+print(welcome_message)
+print (sample_board)
+
+user_choice = input('Enter your desired location [1-9]:')
+
+print('You picked %s' % user_choice)
+user_input(user_choice)
+cpu_input(random_number())
+
+print(b)
